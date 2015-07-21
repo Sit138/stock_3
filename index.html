@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="maskedinput.min.js"></script>
+    <script>
+        jQuery(function($) {
+            $.mask.definitions['~'] = '[+-]';
+            $('#tel').mask('(999) 999-99-99');
+        });
+    </script>
 </head>
 <body>
 <form id="form" oninput="level.value = rang.valueAsNumber">
@@ -36,8 +44,8 @@
                 <td><input type="number" id="num" name="num"></td>
             </tr>
             <tr>
-                <td>Диапазон 0-100:</td>
-                <td colspan="2"><input type="range" name="rang" id="range" min="20" max="100" value="20">
+                <td>Диапазон 20-100:</td>
+                <td colspan="2"><input type="range" name="rang" id="rang" min="20" max="100" value="20">
                                 <output name="level" for="range" id="level">20</output>/100</td>
             </tr>
             <tr>
@@ -48,7 +56,6 @@
     <input type="button" value="Сохранить" onclick="validateFieldAndSave(this.form)">
 </form>
 <script src="action.js"></script>
-
 
 </body>
 </html>
