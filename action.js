@@ -50,6 +50,7 @@ function validateFieldAndSave(form){
     resetError(elem.num.parentNode);
     resetError(elem.email.parentNode);
     resetError(elem.tel.parentNode);
+    resetError(elem.url.parentNode);
     if(!elem.firstname.value) {
         showError(elem.firstname.parentNode, 'Enter the name');
     }
@@ -91,7 +92,7 @@ function validateFieldAndSave(form){
     }
 
     if(!elem.url.value) {
-        showError(elem.tel.parentNode, 'Error telephone');
+        showError(elem.url.parentNode, 'Enter URL');
     }
     else {
         localStorage.url = document.getElementById('url').value;
