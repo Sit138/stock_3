@@ -1,4 +1,4 @@
-/*сохранение данных в localStorage (функция для простого сохранения без валидации полей)
+/*СЃРѕС…СЂР°РЅРµРЅРёРµ РґР°РЅРЅС‹С… РІ localStorage (С„СѓРЅРєС†РёСЏ РґР»СЏ РїСЂРѕСЃС‚РѕРіРѕ СЃРѕС…СЂР°РЅРµРЅРёСЏ Р±РµР· РІР°Р»РёРґР°С†РёРё РїРѕР»РµР№)
 function save(){
     localStorage.name = document.getElementById('firstname').value;
     localStorage.surname = document.getElementById('surname').value;
@@ -11,7 +11,7 @@ function save(){
     showDataInWin();
 }*/
 
-/*вывод сохраненных данных в новое модальное окно(просто чтобы не засорять форму)*/
+/*РІС‹РІРѕРґ СЃoС…СЂР°РЅРµРЅРЅС‹С… РґР°РЅРЅС‹С… РІ РЅРѕРІРѕРµ РјРѕРґР°Р»СЊРЅРѕРµ РѕРєРЅРѕ(РїСЂРѕСЃС‚Рѕ С‡С‚РѕР±С‹ РЅРµ Р·Р°СЃРѕСЂСЏС‚СЊ С„РѕСЂРјСѓ)*/
 function showDataInWin() {
     var newWin = window.open("about:blank", "Data", "width:200, height:200");
     newWin.document.write("Saved data:<br/>"
@@ -25,7 +25,7 @@ function showDataInWin() {
         + "Color: " + localStorage.color + "<br/>");
 }
 
-/*заполнение полей данными последнего сохранения*/
+/*Р·Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»РµР№ РґР°РЅРЅС‹РјРё РїРѕСЃР»РµРґРЅРµРіРѕ СЃРѕС…СЂР°РЅРµРЅРёСЏ*/
 function outputInField() {
     document.getElementById('firstname').value = localStorage.name;
     document.getElementById('surname').value = localStorage.surname;
@@ -45,12 +45,11 @@ function validateFieldAndSave(form){
         count = 0,
         regEmail = /[0-9a-z_]+@[0-9a-z_]+\.[a-z]{2,5}/i,
         regTel = /[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}/;
-    resetError(elem.firstname.parentNode);//сбрасываю
+    resetError(elem.firstname.parentNode);//СЃР±СЂР°СЃС‹РІР°СЋ
     resetError(elem.surname.parentNode);
     resetError(elem.num.parentNode);
     resetError(elem.email.parentNode);
     resetError(elem.tel.parentNode);
-
     if(!elem.firstname.value) {
         showError(elem.firstname.parentNode, 'Enter the name');
     }
