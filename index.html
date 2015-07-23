@@ -14,47 +14,50 @@
     </script>
 </head>
 <body>
+<div id="mainForm">
 <form id="form" oninput="level.value = rang.valueAsNumber">
-        <table>
-            <tr>
-                <td>Имя:</td>
-                <td><input type="text" id="firstname" name="firstname"/></td>
-            </tr>
-            <tr>
-                <td>Фамилия:</td>
-                <td><input type="text" id="surname" name="surname"></td>
-            </tr>
-            <tr>
-                <td>Эл. почта:</td>
-                <td><input type="email" id="email" name="email"></td>
-            </tr>
-            <tr>
-                <td>URL:</td>
-                <td><input type="url" id="url" name="url"></td>
-            </tr>
-            <tr>
-                <td>Телефон:</td>
-                <td colspan="2">
-                    <input type="tel" id="tel" name="tel"><br/>
-                    (XXX-XXX-XX-XX)
-                </td>
-            </tr>
-            <tr>
-                <td>Число:</td>
-                <td><input type="number" id="num" name="num"></td>
-            </tr>
-            <tr>
-                <td>Диапазон 20-100:</td>
-                <td colspan="2"><input type="range" name="rang" id="rang" min="20" max="100" value="20">
-                                <output name="level" for="range" id="level">20</output>/100</td>
-            </tr>
-            <tr>
-                <td>Цвет:</td>
-                <td><input type="color" id="color"></td>
-            </tr>
-        </table>
-    <input type="button" value="Сохранить" onclick="validateFieldAndSave(this.form)">
+        <div class="allForm">
+            <div class="cell">
+                <label for="firstname">Имя:</label>
+                <input type="text" id="firstname" name="firstname"/>
+            </div>
+            <div class="cell">
+                <label for="surname">Фамилия:</label>
+                <input type="text" id="surname" name="surname">
+            </div>
+            <div class="cell">
+                <label for="email">Эл. почта:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="cell">
+                <label for="url">URL:</label>
+                <input type="url" id="url" name="url">
+            </div>
+            <div class="cell">
+                <label for="tel">Телефон:</label>
+                <input type="tel" id="tel" name="tel"><br/>
+                (XXX-XXX-XX-XX)
+            </div>
+            <div class="cell">
+                <label for="num">Число:</label>
+                <input type="number" id="num" name="num">
+            </div>
+            <div class="cell">
+                <label for="rang">Диапазон 20-100:</label>
+                <input type="range" name="rang" id="rang" min="20" max="100" value="20">
+                <output name="level" for="rang" id="level">20</output>/100
+            </div>
+            <div class="cell">
+                <label for="color">Цвет:</label>
+                <input type="color" id="color">
+            </div>
+            <div class="cell">
+                <input type="button" value="Сохранить" onclick="validateFieldAndSave(this.form)">
+            </div>
+        </div>
 </form>
+</div>
+
 <script src="action.js"></script>
 
 </body>

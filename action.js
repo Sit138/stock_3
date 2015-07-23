@@ -1,51 +1,57 @@
 /*вывод сoхраненных данных в новое модальное окно(просто чтобы не засорять форму)*/
 function showDataInWin() {
     var newWin = window.open("about:blank", "Data", "width:200, height:200"),
-        key = ['firstname', 'surname', 'url', 'tel', 'num', 'rang', 'color'],
         i;
-    for(i = 0; i < key.length; i++){
+    varKey();
+    for(i = 0; key.length > i; i++){
         newWin.document.write(key[i] + " :" + localStorage[key[i]] + "<br/>");
     }
 }
 
 /*заполнение полей данными последнего сохранения*/
 function outputInField() {
-    var key = ['firstname', 'surname', 'url', 'tel', 'email', 'num', 'rang', 'color'],
-        i;
+    var i;
+    varKey();
     if('surname' in localStorage){
-        for(i = 0; i < key.length; i++){
+        for (i = 0; key.length > i; i++) {
             document.getElementById(key[i]).value = localStorage[key[i]];
         }
+        document.getElementById('level').value = document.getElementById('rang').valueAsNumber;
     }
 }
 outputInField();
-
+function varKey(){
+    return key = ['firstname', 'surname', 'url', 'tel', 'email', 'num', 'rang', 'color'];
+}
 function validateFieldAndSave(form){
     var elem = form.elements,
+        count = 0, i = 0,
         regNum = /\d/,
-        count = 0,
         regEmail = /[0-9a-z_]+@[0-9a-z_]+\.[a-z]{2,5}/i,
-        key = ['firstname', 'surname', 'url', 'tel', 'email', 'num'],
-        i;
-    resetError(elem.firstname.parentNode);//сбрасываю
-    resetError(elem.surname.parentNode);
-    resetError(elem.num.parentNode);
-    resetError(elem.email.parentNode);
-    resetError(elem.tel.parentNode);
-    resetError(elem.url.parentNode);
-
-    for(i = 0; i < key.length; i++){
-        if(!elem[key[i]].value) {
-            showError(elem[key[i]].parentNode, 'Enter the name');
+        regUrl = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
+        regName = /[А-Яа-яA-Za-z]/,
+        key = ["firstname", "surname", "email", "url", "num"],//ключи для регулярок
+        regExp = {//объект, котоый хранит все наши регулярки
+            'firstname': regName,
+            'surname': regName,
+            'url': regUrl,
+            'email': regEmail,
+            'num': regNum
+        };
+    for (i ; key.length > i; i++) {
+        resetError(elem[key[i]].parentNode);
+        if (!elem[key[i]].value || !regExp[key[i]].test(elem[key[i]].value)) {
+            showError(elem[key[i]].parentNode, 'Ошибка');
         }
         else {
             localStorage[key[i]] = document.getElementById(key[i]).value;
             count++;
         }
     }
+    localStorage.tel = document.getElementById('tel').value;//телефон проверяется на jquery, поэтому просто сохраняем
     localStorage.rang = document.getElementById('rang').value;
     localStorage.color = document.getElementById('color').value;
-    if(count == form.elements.length - 4){
+    if(count == form.elements.length - 5){
         showDataInWin();
     }
 }
@@ -64,3 +70,4 @@ function resetError(container) {
         container.removeChild(container.lastChild);
     }
 }
+
