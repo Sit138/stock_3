@@ -14,50 +14,63 @@
     </script>
 </head>
 <body>
-<div id="mainForm">
+<div id="main">
+    <h1>Форма</h1>
+    <fieldset>
 <form id="form" oninput="level.value = rang.valueAsNumber">
-        <div class="allForm">
-            <div class="cell">
-                <label for="firstname">Имя:</label>
-                <input type="text" id="firstname" name="firstname"/>
+            <div class="field">
+                <div>
+                    <label>Имя:</label>
+                    <input type="text" id="firstname" name="firstname"/>
+                </div>
             </div>
-            <div class="cell">
-                <label for="surname">Фамилия:</label>
-                <input type="text" id="surname" name="surname">
+            <div class="field">
+                <div>
+                    <label>Фамилия:</label>
+                    <input type="text" id="surname" name="surname">
+                </div>
             </div>
-            <div class="cell">
-                <label for="email">Эл. почта:</label>
-                <input type="email" id="email" name="email">
+            <div class="field">
+                <div>
+                    <label for="email">Эл. почта:</label>
+                    <input type="email" id="email" name="email">
+                </div>
             </div>
-            <div class="cell">
-                <label for="url">URL:</label>
-                <input type="url" id="url" name="url">
+            <div class="field">
+                <div>
+                    <label for="url">URL:</label>
+                    <input type="url" id="url" name="url">
+                </div>
             </div>
-            <div class="cell">
-                <label for="tel">Телефон:</label>
-                <input type="tel" id="tel" name="tel"><br/>
-                (XXX-XXX-XX-XX)
+            <div class="field">
+                <div>
+                    <label for="tel">Телефон:</label>
+                    <input type="tel" required id="tel" name="tel"><br/>
+                </div>
             </div>
-            <div class="cell">
-                <label for="num">Число:</label>
-                <input type="number" id="num" name="num">
+            <div class="field">
+                <div>
+                    <label for="num">Число:</label>
+                    <input type="number" id="num" name="num">
+                </div>
             </div>
-            <div class="cell">
+            <div class="field">
                 <label for="rang">Диапазон 20-100:</label>
                 <input type="range" name="rang" id="rang" min="20" max="100" value="20">
                 <output name="level" for="rang" id="level">20</output>/100
             </div>
-            <div class="cell">
+            <div class="field">
                 <label for="color">Цвет:</label>
                 <input type="color" id="color">
             </div>
-            <div class="cell">
-                <input type="button" value="Сохранить" onclick="validateFieldAndSave(this.form)">
+            <div class="field">
+                <p>
+                    <input type="button" value="Сохранить" onclick="validateFieldAndSave(this.form)">
+                </p>
             </div>
-        </div>
 </form>
+    </fieldset>
 </div>
-
 <script src="action.js"></script>
 
 </body>
