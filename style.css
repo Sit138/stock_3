@@ -1,42 +1,34 @@
-
-.error input {
-    border: 3px solid red;
-}
-
 .error {
-    color: red;
-}
+  color: red; }
+  .error input {
+    border: 3px solid red; }
 
 .field {
-    clear:both;
-    text-align:right;
-}
-label {
-    float: left;
-}
+  clear: both;
+  text-align: right; }
 
+label {
+  float: left; }
 
 html {
-    background: url("data/main.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-#main {
-    background-color: #363636;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    margin: 0px auto;
-    width: 500px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    -webkit-box-shadow:  0px 10px 20px 0px rgba(0, 0, 0, 0.3);
-    box-shadow:  0px 10px 20px 0px rgba(0, 0, 0, 0.3);
-}
+  background: url("data/main.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
-#main h1 {
+#main {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #363636;
+  font-family: "Open Sans", sans-serif;
+  margin: 0px auto;
+  width: 500px;
+  font-size: 16px;
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3); }
+  #main h1 {
     background-color: #292829;
     border-radius: 5px 5px 0px 0px;
     -moz-border-radius: 5px 5px 0px 0px;
@@ -45,70 +37,60 @@ html {
     padding: 20px;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-}
-
-#main fieldset {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px; }
+  #main fieldset {
     border: none;
     padding: 20px;
-    position: relative;
-}
-
-#main fieldset form {
-    overflow: hidden;
-    width: 400px;
-    text-align: center;
-}
-
-#main fieldset form input {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    outline: none;
-    -webkit-appearance:none;
-    width: 240px;
-    text-align: center;
-    position: center;
-}
-
-#main fieldset form input:focus {
-    background-color: azure;
-}
+    position: relative; }
+    #main fieldset form {
+      overflow: hidden;
+      width: 400px;
+      text-align: center; }
+      #main fieldset form input {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        outline: none;
+        -webkit-appearance: none;
+        width: 240px;
+        text-align: center;
+        position: center; }
+      #main fieldset form input:focus {
+        background-color: azure; }
+      #main fieldset form input[type="button"] {
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        background-color: #ebebeb;
+        border: none;
+        color: #404040;
+        cursor: pointer;
+        float: none;
+        font-weight: bold;
+        margin-top: 20px;
+        padding: 12px 12px;
+        -webkit-appearance: none;
+        width: 120px; }
 
 #firstname {
-    border-radius: 10px 10px 0px 0px;
-    -moz-border-radius: 10px 10px 0px 0px;
-    -webkit-border-radius: 10px 10px 0px 0px;
-    padding: 12px 10px;
-    width: 238px;
-    -webkit-appearance:none;
-}
-#color {
-    border-radius: 0px 0px 10px 10px;
-    -moz-border-radius: 0px 0px 10px 10px;
-    -webkit-border-radius: 0px 0px 10px 10px;
-    padding: 12px 10px;
-    width: 238px;
-    -webkit-appearance:none;
-}
-#surname, #url, #email, #tel, #num, #rang {
-    padding: 12px 10px;
-    width: 238px;
-    -webkit-appearance:none;
-}
+  border-radius: 10px 10px 0px 0px;
+  -moz-border-radius: 10px 10px 0px 0px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  padding: 12px 10px;
+  width: 238px;
+  -webkit-appearance: none; }
 
-#main fieldset form input[type="button"] {
-    background-color: #ebebeb;
-    border: none;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    color: #404040;
-    cursor: pointer;
-    float: none;
-    font-weight: bold;
-    margin-top: 20px;
-    padding: 12px 12px;
-    -webkit-appearance: none;
-    width: 120px;
-}
+#color {
+  border-radius: 0px 0px 10px 10px;
+  -moz-border-radius: 0px 0px 10px 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+  padding: 12px 10px;
+  width: 238px;
+  -webkit-appearance: none; }
+
+#surname, #url, #email, #tel, #num, #rang {
+  padding: 12px 10px;
+  width: 238px;
+  -webkit-appearance: none; }
+
+/*# sourceMappingURL=style.css.map */

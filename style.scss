@@ -1,0 +1,113 @@
+﻿$urlBack:url("data/main.jpg") no-repeat center center fixed;
+$OpenSans:'Open Sans', sans-serif;
+$Arial:Arial, Helvetica, sans-serif;
+$textSize:16px;
+$radiusMain:5px;
+$radiusH1:5px 5px 0px 0px;
+$radiusBut:10px;
+$radiusFirNam:10px 10px 0px 0px;
+$radiusColor:0px 0px 10px 10px;
+@mixin backgroundSize($size){
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+@mixin borderRadius($radius){
+	border-radius:$radius;
+	-moz-border-radius:$radius;
+	-webkit-border-radius:$radius;
+}
+@mixin shadow($px){
+	-webkit-box-shadow:  $px $px+10 $px+20 $px rgba(0, 0, 0, 0.3);
+    box-shadow:  $px $px+10 $px+20 $px rgba(0, 0, 0, 0.3);
+}
+@mixin FAndLField{
+	padding: 12px 10px;
+    width: 238px;
+    -webkit-appearance:none;
+}
+.error{
+  color: red;
+  input{
+    border: 3px solid red;
+  }
+}
+.field{
+  clear: both;
+  text-align: right;
+}
+label{
+  float: left;
+}
+html{
+	background:$urlBack;
+	@include backgroundSize(cover);
+}
+#main{
+	@include borderRadius($radiusMain);
+	background-color: #363636;
+	font-family:$OpenSans;
+	margin: 0px auto;
+    width: 500px;
+	font-size: $textSize;
+	@include shadow(0px);
+	h1{
+		background-color: #292829;
+		@include borderRadius($radiusH1);
+		color: #fff;
+		padding: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		font-family:$OpenSans;
+		font-size: $textSize;
+	}
+	fieldset{
+		border: none;
+		padding: 20px;
+		position: relative;
+		form{
+			overflow: hidden;
+			width: 400px;
+			text-align: center;
+			input{
+				font-family:$Arial;
+				font-size:$textSize;
+				outline: none;
+				-webkit-appearance:none;
+				width: 240px;
+				text-align: center;
+				position: center;
+			}
+			input:focus{
+				background-color: azure;
+			}
+			input[type="button"]{
+				@include borderRadius($radiusBut);
+				background-color: #ebebeb;
+				border: none;
+				color: #404040;
+				cursor: pointer;
+				float: none;
+				font-weight: bold;
+				margin-top: 20px;
+				padding: 12px 12px;
+				-webkit-appearance: none;
+				width: 120px;
+			}
+		}
+	}
+}
+#firstname{
+	@include borderRadius($radiusFirNam);
+	@include FAndLField;
+}
+#color{
+	@include borderRadius($radiusColor);
+	@include FAndLField;
+}
+#surname, #url, #email, #tel, #num, #rang{
+	@include FAndLField;
+}
+
+
